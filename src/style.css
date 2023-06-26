@@ -4,6 +4,8 @@
     --bg-main: #D0F5BE;
     --highlight-main: #F266AB;
     --highlight-light: #fabfdc;
+
+    --minor: #fae2f5;
 }
 
 body {
@@ -52,7 +54,11 @@ body {
     border: 3px solid black;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     box-shadow: -2px 2px black;
+}
+.alternative{
+    background-color: var(--minor);
 }
 .setting label {
     text-align: center;
@@ -88,6 +94,10 @@ input {
 }
 .custom-checkbox:checked::before{
     transform: scale(1);
+}
+
+.minmaj-button{
+    background: none;
 }
 
 #advanced-settings-button {

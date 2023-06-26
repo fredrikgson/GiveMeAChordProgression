@@ -44,15 +44,14 @@ const BasicSettings = ({
         </select>
         <label htmlFor="key">Key</label>
       </div>
-      <div className="setting">
+      <div className={`setting ${isMinor ? "alternative" : ""}`}>
         <input
-          className="custom-checkbox"
+          className="minmaj-button"
           id="is-minor"
-          type="checkbox"
-          checked={isMinor}
-          onChange={(e) => setIsMinor(e.target.checked)}
+          type="button"
+          value={isMinor ? "minor" : "Major"}
+          onClick={() => setIsMinor(!isMinor)}
         ></input>
-        <label htmlFor="is-minor">Minor?</label>
       </div>
     </div>
   );
