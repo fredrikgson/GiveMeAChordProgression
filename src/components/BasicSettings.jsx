@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const BasicSettings = ({
   numberOfChords,
   isMinor,
@@ -20,6 +22,14 @@ const BasicSettings = ({
     "B",
   ];
 
+  const [fetchedKeys, setFetchedKeys] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/all-keys")
+      .then((res) => res.json())
+      .then((data) => setFetchedKeys(data));
+  }, []);
+
   return (
     <div className="settings-group">
       <div className="setting">
@@ -35,13 +45,17 @@ const BasicSettings = ({
       </div>
       <div className="setting">
         <select id="key" onChange={(e) => setKey(e.target.value)}>
-          {keys.map((key) => {
-            return (
-              <option key={key} value={key}>
-                {key}
-              </option>
-            );
-          })}
+          {fetchedKeys.length > 0 ? (
+            fetchedKeys.map((fetchedKey) => {
+              return (
+                <option key={fetchedKey} value={fetchedKey}>
+                  {fetchedKey}
+                </option>
+              );
+            })
+          ) : (
+            <option>Loading...</option>
+          )}
         </select>
         <label htmlFor="key">Key</label>
       </div>
