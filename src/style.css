@@ -2,6 +2,7 @@
 
 :root {
     --bg-main: #D0F5BE;
+    --bg-main-darker: #b3ef97;
     --highlight-main: #F266AB;
     --highlight-light: #fabfdc;
 
@@ -159,6 +160,15 @@ select {
 
 #empty-p{
     margin: 0px;
+}
+
+hr{
+    width: 60%;
+    margin-bottom: 16px;
+    border-top: 8px dotted var(--bg-main-darker);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
 }
 
 .chord-progression-wrapper{

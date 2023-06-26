@@ -3,6 +3,7 @@ import BasicSettings from "./BasicSettings";
 import AdvancedSettings from "./AdvancedSettings";
 
 const SettingsForm = ({
+  setChordProgression,
   defNumberOfChords,
   defKey,
   defIsMinor,
@@ -30,34 +31,27 @@ const SettingsForm = ({
     defProbParallelKeyChords
   );
 
+  const getChordProgression = () => {
+    fetch(
+      "api/chord-progression?" +
+        new URLSearchParams({
+          number: numberOfChords,
+          key: key.replace("#", "sharp"),
+          isMinor: isMinor,
+          forceOneChord: forceOneChord,
+          dimChords: dimChords,
+          probSeventhChords: probSeventhChords,
+          probSusChords: probSusChords,
+          probParallelKeyChords: probParallelKeyChords,
+        })
+    )
+      .then((res) => res.json())
+      .then((data) => setChordProgression(data));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(
-      "Number of chords: " +
-        numberOfChords +
-        "\n" +
-        "Key: " +
-        key +
-        "\n" +
-        "Minor? " +
-        isMinor +
-        "\n" +
-        "Force one-chord? " +
-        forceOneChord +
-        "\n" +
-        "Dim chords? " +
-        dimChords +
-        "\n" +
-        "Probability of 7th chords: " +
-        probSeventhChords +
-        "%\n" +
-        "Probability of sus chords: " +
-        probSusChords +
-        "%\n" +
-        "Probability of parallel key chords: " +
-        probParallelKeyChords +
-        "%\n"
-    );
+    getChordProgression();
   };
 
   return (

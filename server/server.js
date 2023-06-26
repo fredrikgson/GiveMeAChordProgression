@@ -9,3 +9,23 @@ app.use(express.static("build"));
 app.get("/api/all-keys", (req, res) => {
   res.send(JSON.stringify(scale("1 1# 2 2# 3 4 4# 5 5# 6 6# 7", "C")));
 });
+
+const dummyChords = [
+  {
+    chord: "C#",
+    isMinor: true,
+    relative: "i",
+  },
+  {
+    chord: "E",
+    isMinor: false,
+    relative: "III",
+  },
+];
+
+app.get("/api/chord-progression", (req, res) => {
+  // fortsätt här, requesten innehåller allt nu
+  // läs med req.query.{key}
+
+  res.send(JSON.stringify(dummyChords));
+});
