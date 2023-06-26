@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import ChordProgression from "./components/ChordProgression";
 import SettingsForm from "./components/SettingsForm";
 import "./style.css";
 
@@ -16,6 +16,7 @@ function App() {
         defProbParallelKeyChords={0}
       />
       <hr />
+      <ChordProgression />
     </div>
   );
 }

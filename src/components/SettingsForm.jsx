@@ -96,7 +96,7 @@ const SettingsForm = ({
           isMinor={isMinor} // for responsive I/i
         />
       ) : (
-        <p></p>
+        <p id="empty-p"></p>
       )}
     </form>
   );

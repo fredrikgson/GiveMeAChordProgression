@@ -156,3 +156,38 @@ select {
     text-align: center;
     font-weight: 600;
 }
+
+#empty-p{
+    margin: 0px;
+}
+
+.chord-progression-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.chord{
+    font-family: "Belanoshima";
+    font-size:larger;
+    margin: 0px 8px 0px 8px;
+    padding: 0px 16px 0px 16px;
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 10px;
+    box-shadow: -4px 4px black;
+    text-align: center;
+}
+.minor-chord{
+    background-color: var(--minor);
+}
+.chord h2{
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+.chord p{
+    margin-top: 2px;
+    margin-bottom: 8px;
+    font-size: medium;
+    color:#3a3a3a;
+}
