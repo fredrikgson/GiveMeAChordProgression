@@ -15,6 +15,7 @@ const AdvancedSettings = ({
     <div className="settings-group">
       <div className="setting">
         <input
+          className="custom-checkbox"
           id="one-chord"
           type="checkbox"
           checked={forceOneChord}
@@ -28,6 +29,7 @@ const AdvancedSettings = ({
       </div>
       <div className="setting">
         <input
+          className="custom-checkbox"
           id="dim-chords"
           type="checkbox"
           checked={dimChords}

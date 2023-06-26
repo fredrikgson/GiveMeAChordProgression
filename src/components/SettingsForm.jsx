@@ -33,18 +33,36 @@ const SettingsForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(
-      "Send request for " +
+      "Number of chords: " +
         numberOfChords +
-        " chords in the key of " +
+        "\n" +
+        "Key: " +
         key +
-        ". Minor: " +
-        isMinor
+        "\n" +
+        "Minor? " +
+        isMinor +
+        "\n" +
+        "Force one-chord? " +
+        forceOneChord +
+        "\n" +
+        "Dim chords? " +
+        dimChords +
+        "\n" +
+        "Probability of 7th chords: " +
+        probSeventhChords +
+        "%\n" +
+        "Probability of sus chords: " +
+        probSusChords +
+        "%\n" +
+        "Probability of parallel key chords: " +
+        probParallelKeyChords +
+        "%\n"
     );
   };
 
   return (
     <form className="generate-form" onSubmit={handleSubmit}>
-      <button id="form-submit-button">Give me a chord progression</button>
+      <button id="form-submit-button">Give me a chord progression!</button>
       <BasicSettings
         numberOfChords={numberOfChords}
         isMinor={isMinor}
@@ -52,15 +70,17 @@ const SettingsForm = ({
         setKey={setKey}
         setIsMinor={setIsMinor}
       />
-      <input
-        id="toggle-advanced-settings"
-        type="checkbox"
-        checked={showAdvancedSettings}
-        onChange={(e) => {
-          setShowAdvancedSettings(e.target.checked);
-        }}
-      ></input>
-      <label htmlFor="toggle-advanced-settings">Advanced settings</label>
+      <div id="advanced-settings-button">
+        <input
+          id="toggle-advanced-settings"
+          type="checkbox"
+          checked={showAdvancedSettings}
+          onChange={(e) => {
+            setShowAdvancedSettings(e.target.checked);
+          }}
+        ></input>
+        <label htmlFor="toggle-advanced-settings">Advanced settings</label>
+      </div>
       {showAdvancedSettings ? (
         <AdvancedSettings
           forceOneChord={forceOneChord}

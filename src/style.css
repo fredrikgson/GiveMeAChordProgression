@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600&family=Roboto+Condensed:wght@300&display=swap');
+
+:root {
+    --bg-main: #D0F5BE;
+    --highlight-main: #F266AB;
+    --highlight-light: #fabfdc;
+}
+
+body {
+    background-color: var(--bg-main);
+    font-family: "Roboto Condensed";
+}
+
+.wrapper {
+    width: 80vw;
+    margin: auto;
+    margin-top: 6em;
+}
+
+.generate-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-submit-button {
+    width: 30rem;
+    height: 4rem;
+    background-color: var(--highlight-main);
+    border: 4px solid black;
+    border-radius: 20rem;
+    font-family: "Belanosima";
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+    box-shadow: -6px 6px black;
+    transition: background-color 0.1s;
+}
+#form-submit-button:hover {
+    background-color: var(--highlight-light);
+}
+
+.settings-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.setting{
+    background-color: white;
+    max-width: 8em;
+    padding: 4px;
+    margin: 0px 6px 0px 6px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -2px 2px black;
+}
+.setting label {
+    text-align: center;
+    font-size: small;
+    color:#3a3a3a;
+}
+
+input {
+    font-family: "Belanoshima";
+    font-size:larger;
+    text-align: center;
+    font-weight: 600;
+    border: none;
+}
+.custom-checkbox{
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: white;
+    margin: auto;
+    display: grid;
+    place-content: center;
+}
+.custom-checkbox::before{
+    font-size: medium;
+    content: "✓";
+    transform: scale(0);
+}
+.custom-checkbox:checked{
+    background-color: var(--highlight-main);
+}
+.custom-checkbox:checked::before{
+    transform: scale(1);
+}
+
+#advanced-settings-button {
+    font-size:small;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+    display: flex;
+}
+#advanced-settings-button label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#toggle-advanced-settings {
+    appearance: none;
+    height: 1em;
+    width: 1em;
+    margin: auto;
+    display: grid;
+    place-content: center;
+}
+#toggle-advanced-settings::before{
+    transform: rotate(0);
+    font-size: larger;
+    content: "›";
+}
+#toggle-advanced-settings:checked::before{
+    transform: rotate(90deg);
+    font-size: larger;
+}
+
+input[type=range]{
+    margin: 6px 0px 6px 0px;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    border-radius: 4px;
+}
+input[type=range]::-webkit-slider-thumb{
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color:var(--highlight-main);
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+select {
+    font-family: "Belanoshima";
+    font-size:larger;
+    text-align: center;
+    font-weight: 600;
+}

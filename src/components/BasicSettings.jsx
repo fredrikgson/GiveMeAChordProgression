@@ -47,6 +47,7 @@ const BasicSettings = ({
       </div>
       <div className="setting">
         <input
+          className="custom-checkbox"
           id="is-minor"
           type="checkbox"
           checked={isMinor}
