@@ -3,14 +3,6 @@ import SettingsForm from "./components/SettingsForm";
 import "./style.css";
 
 function App() {
-  const [testChords, setTestChords] = useState([]);
-
-  useEffect(() => {
-    fetch("/api/test")
-      .then((res) => res.json())
-      .then((data) => setTestChords(data));
-  }, []);
-
   return (
     <div className="wrapper">
       <SettingsForm
@@ -24,13 +16,6 @@ function App() {
         defProbParallelKeyChords={0}
       />
       <hr />
-      {testChords.length > 0 ? (
-        testChords.map((chord) => {
-          return <p>{chord.chord}</p>;
-        })
-      ) : (
-        <p>No data</p>
-      )}
     </div>
   );
 }
