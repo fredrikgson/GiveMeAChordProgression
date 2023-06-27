@@ -15,11 +15,13 @@ const dummyChords = [
     chord: "C#",
     isMinor: true,
     relative: "i",
+    notes: ["C#", "E", "G#"],
   },
   {
     chord: "E",
     isMinor: false,
     relative: "III",
+    notes: ["E", "G#", "B"],
   },
 ];
 
