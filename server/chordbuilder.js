@@ -78,8 +78,7 @@ const getChordProgression = (
 
   // sus chords
   chords = chords.map((chord) => {
-    let susChord =
-      chord.toUpperCase() + "sus" + (Math.random() < 0.5 ? "2" : "4");
+    let susChord = chord + "sus" + (Math.random() < 0.5 ? "2" : "4");
     return !susChord.includes("°") && Math.random() < probSusChords / 100
       ? susChord
       : chord;

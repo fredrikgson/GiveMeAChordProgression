@@ -28,7 +28,7 @@ app.get("/api/chord-progression", (req, res) => {
   // läs med req.query.{key}
   let chords = chordbuilder.getChordProgression(
     req.query.number,
-    req.query.key,
+    req.query.key.replace("sharp", "#"),
     req.query.isMinor,
     req.query.forceOneChord,
     req.query.dimChords,
