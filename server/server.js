@@ -1,4 +1,4 @@
-const scale = require("music-scale");
+const chordbuilder = require("./chordbuilder");
 const express = require("express");
 
 const app = express();
@@ -7,19 +7,17 @@ app.listen(PORT, () => console.log("Server started on port " + PORT));
 app.use(express.static("build"));
 
 app.get("/api/all-keys", (req, res) => {
-  res.send(JSON.stringify(scale("1 1# 2 2# 3 4 4# 5 5# 6 6# 7", "C")));
+  res.send(JSON.stringify(chordbuilder.getAllNotes()));
 });
 
 const dummyChords = [
   {
-    chord: "C#",
-    isMinor: true,
+    chord: "C#m",
     relative: "i",
     notes: ["C#", "E", "G#"],
   },
   {
     chord: "E",
-    isMinor: false,
     relative: "III",
     notes: ["E", "G#", "B"],
   },
@@ -28,6 +26,15 @@ const dummyChords = [
 app.get("/api/chord-progression", (req, res) => {
   // fortsätt här, requesten innehåller allt nu
   // läs med req.query.{key}
-
-  res.send(JSON.stringify(dummyChords));
+  let chords = chordbuilder.getChordProgression(
+    req.query.number,
+    req.query.key,
+    req.query.isMinor,
+    req.query.forceOneChord,
+    req.query.dimChords,
+    req.query.probSeventhChords,
+    req.query.probSusChords,
+    req.query.probParallelKeyChords
+  );
+  res.send(JSON.stringify(chords));
 });

@@ -5,7 +5,7 @@ const ChordProgression = ({ chordProgression }) => {
         ? chordProgression.map((chord) => {
             return (
               <div className="chord" key={crypto.randomUUID()}>
-                <h2>{chord.chord + (chord.isMinor ? "m" : "")}</h2>
+                <h2>{chord.chord}</h2>
                 <p id="relative">{chord.relative}</p>
                 <p className="notes-in-chord">
                   {chord.notes.map((note) => {
