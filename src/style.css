@@ -3,10 +3,12 @@
 :root {
     --bg-main: #D0F5BE;
     --bg-main-darker: #b3ef97;
+    --bg-main-lighter: #e8fae0;
     --highlight-main: #F266AB;
     --highlight-light: #fabfdc;
 
     --minor: #fae2f5;
+    --one-chord: #fdecf4;
 }
 
 body {
@@ -188,6 +190,9 @@ hr{
     box-shadow: -4px 4px black;
     text-align: center;
 }
+.one-chord{
+    background-color: var(--one-chord);
+}
 .minor-chord{
     background-color: var(--minor);
 }
@@ -197,7 +202,7 @@ hr{
 }
 #relative{
     margin-top: 2px;
-    margin-bottom: 0;
+    margin-bottom: 8px;
     font-size: medium;
     color:#3a3a3a;
 }

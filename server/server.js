@@ -10,19 +10,6 @@ app.get("/api/all-keys", (req, res) => {
   res.send(JSON.stringify(chordbuilder.getAllNotes()));
 });
 
-const dummyChords = [
-  {
-    chord: "C#m",
-    relative: "i",
-    notes: ["C#", "E", "G#"],
-  },
-  {
-    chord: "E",
-    relative: "III",
-    notes: ["E", "G#", "B"],
-  },
-];
-
 app.get("/api/chord-progression", (req, res) => {
   // fortsätt här, requesten innehåller allt nu
   // läs med req.query.{key}

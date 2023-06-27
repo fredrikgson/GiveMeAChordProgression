@@ -60,7 +60,7 @@ const mapChord = (chord, scale) => {
   if (splitChord[0].toLowerCase() === splitChord[0]) {
     if (splitChord[0].includes("°")) head += "°";
     else if (splitChord[0].includes("ø")) head += "ø";
-    else head += "m";
+    else if (!splitChord[1].includes("sus")) head += "m";
   }
   return head + splitChord[1];
 };
@@ -72,6 +72,7 @@ const mapToKey = (chords, key, isMinor) => {
       chord: mapChord(chord, scale),
       relative: chord.split(":")[0],
       notes: ["x", "x", "x"],
+      isOne: chord.split(":")[0].toLowerCase() === "i" ? "true" : "false",
     };
   });
   return mappedChords;
