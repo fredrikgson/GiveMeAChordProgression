@@ -3,6 +3,7 @@
 This is a React and Express powered web application that generates random chord progressions based on certain constraints.
 
 [Try it here!](https://fredrikgson-givemeachordprogression.netlify.app/)
+
 **Important note:** *The deployed version that can be accessed via this link is a rewritten static version of the app. I did this to be able to provide an interactive demonstration without having to host a server. The static version looks and feels exactly the same as the full stack app.*
 
 ### App funcitonality
