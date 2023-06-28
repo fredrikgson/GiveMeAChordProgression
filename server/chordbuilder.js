@@ -1,15 +1,10 @@
 const chordmapper = require("./chordmapper");
-const scale = require("music-scale");
 
 const scaleChords = {
   major: ["I", "ii", "iii", "IV", "V", "vi", "vii°"],
   majorWithoutDim: ["I", "ii", "iii", "IV", "V", "vi"],
   minor: ["i", "ii°", "III", "iv", "v", "VI", "VII"],
   minorWithoutDim: ["i", "III", "iv", "v", "VI", "VII"],
-};
-
-const getAllNotes = () => {
-  return scale("1 1# 2 2# 3 4 4# 5 5# 6 6# 7", "C");
 };
 
 const getChordProgression = (
@@ -91,6 +86,5 @@ const getChordProgression = (
 };
 
 module.exports = {
-  getAllNotes: getAllNotes,
   getChordProgression: getChordProgression,
 };

@@ -26,6 +26,10 @@ const intervals = {
   minor: [0, 2, 3, 5, 7, 8, 10],
 };
 
+const getAllNotes = () => {
+  return allNotes;
+};
+
 const getScale = (key, isMinor) => {
   let scale = [];
   if (isMinor === "true") {
@@ -80,4 +84,5 @@ const mapToKey = (chords, key, isMinor) => {
 
 module.exports = {
   mapToKey: mapToKey,
+  getAllNotes: getAllNotes,
 };

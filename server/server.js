@@ -1,4 +1,5 @@
 const chordbuilder = require("./chordbuilder");
+const chordmapper = require("./chordmapper");
 const express = require("express");
 
 const app = express();
@@ -7,7 +8,7 @@ app.listen(PORT, () => console.log("Server started on port " + PORT));
 app.use(express.static("build"));
 
 app.get("/api/all-keys", (req, res) => {
-  res.send(JSON.stringify(chordbuilder.getAllNotes()));
+  res.send(JSON.stringify(chordmapper.getAllNotes()));
 });
 
 app.get("/api/chord-progression", (req, res) => {
