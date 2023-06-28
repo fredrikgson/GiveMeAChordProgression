@@ -25,8 +25,15 @@ The frontend is built using React and JavaScript. It pretty much consists of a s
 The server is built using NodeJS and Express. It contains modules that generate and map chord progressions to a given key. The API has only two endpoints, one that sends a list of all keys (which is needed for the *Key* dropdown menu in the UI), and one that sends a chord progression.
 
 ### Developer reflection
-The idea of an app that generates chord progressions is something I’ve experimented with before. This project is meant to be a more fleshed out version of that, using technologies that I have since learned.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Pj6JNkYeW0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+The idea of an app that generates chord progressions is something I’ve experimented with [before](https://youtu.be/Pj6JNkYeW0Y). This project is meant to be a more fleshed out version of that, using technologies that I have since learned.
 
 ### Preview
+<figure>
+    <img src="preview/prev1.png" height="250" title="Give me a chord progression">
+    <figcaption>Generated chords</figcaption>
+  </figure>
+  <hr />
+  <figure>
+    <img src="preview/prev2.png" height="250" title="Advanced settings">
+    <figcaption>Generated chords with advanced tweaks</figcaption>
+  </figure>
