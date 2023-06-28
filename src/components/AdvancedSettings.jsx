@@ -17,6 +17,7 @@ const AdvancedSettings = ({
         <input
           className="custom-checkbox"
           id="one-chord"
+          title="Force at least one instance of the one-chord (recommended)"
           type="checkbox"
           checked={forceOneChord}
           onChange={(e) => {
@@ -31,6 +32,7 @@ const AdvancedSettings = ({
         <input
           className="custom-checkbox"
           id="dim-chords"
+          title="Include diminished chords?"
           type="checkbox"
           checked={dimChords}
           onChange={(e) => {
@@ -42,6 +44,7 @@ const AdvancedSettings = ({
       <div className="setting">
         <input
           id="prob-seventh-chords"
+          title="The probability of each chord being a 7th chord (0% chance - 100% chance)"
           type="range"
           min="0"
           max="100"
@@ -56,6 +59,7 @@ const AdvancedSettings = ({
       <div className="setting">
         <input
           id="prob-sus-chords"
+          title="The probability of each chord being a sus2 or sus4 chord (0% chance - 100% chance)"
           type="range"
           min="0"
           max="100"
@@ -70,6 +74,7 @@ const AdvancedSettings = ({
       <div className="setting">
         <input
           id="prob-parallel-key-chords"
+          title="The probability of each chord being borrowed from the parallel key (0% chance - 50% chance)"
           type="range"
           min="0"
           max="50"
